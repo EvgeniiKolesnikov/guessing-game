@@ -30,7 +30,7 @@ describe('#guess', () => {
         game.greater();
         result = game.guess();
         game.lower();
-        result = game.guess();
+        result = game.log().guess();
 
         expect(result).to.equal(number);
     });
@@ -3060,7 +3060,7 @@ describe('#guess', () => {
         game.lower();
         result = game.guess();
         game.greater();
-        result = game.guess();
+        result = game.log().guess();
 
         expect(result).to.equal(number);
     });

@@ -1,21 +1,40 @@
 class GuessingGame {
-    constructor() {}
+  min;
+  max;
+  res;
 
-    setRange(min, max) {
+  setRange(min, max) {
+    this.min = min;
+    this.max = max;
+    this.updateRes();
+    return this;
+  }
 
-    }
+  guess() {
+    return this.res;
+  }
 
-    guess() {
+  lower() {
+    this.max = this.res;
+    this.updateRes();
+    return this;
+  }
 
-    }
+  greater() {
+    this.min = this.res;
+    this.updateRes();
+    return this;
+  }
 
-    lower() {
+  updateRes() {
+    this.res = Math.ceil((this.max - this.min) / 2 + this.min);
+    return this;
+  }
 
-    }
-
-    greater() {
-
-    }
+  log() {
+    console.log('res =', this.res);
+    return this;
+  }
 }
 
 module.exports = GuessingGame;
